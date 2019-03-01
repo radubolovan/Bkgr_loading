@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tex/gui_001.png" type="Texture" id=1]
+[ext_resource path="res://fnt/asimov_48.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("small_circle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 595, 354 ), Vector2( 604, 358 ), Vector2( 608, 367 ), Vector2( 604, 376 ), Vector2( 595, 380 ), Vector2( 586, 376 ), Vector2( 582, 367 ), Vector2( 586, 358 ), Vector2( 595, 354 ), Vector2( 595, 354 ) ]
+}
+
+[node name="loading" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 450.0, 372.0 ],
+"_edit_lock_": true,
+"_edit_vertical_guides_": [ 600.0 ]
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 1 )
+
+[node name="bkgr" type="Sprite" parent="."]
+scale = Vector2( 120, 67.5 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 2, 2, 10, 10 )
+
+[node name="circle" type="Sprite" parent="."]
+position = Vector2( 575, 347 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 14, 2, 50, 50 )
+
+[node name="small_circle" type="Sprite" parent="."]
+position = Vector2( 604.314, 358.707 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 66, 2, 10, 10 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 486.0
+margin_top = 275.0
+margin_right = 713.0
+margin_bottom = 332.0
+custom_fonts/font = ExtResource( 2 )
+text = "Loading ..."
+

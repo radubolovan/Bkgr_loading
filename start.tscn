@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://start.gd" type="Script" id=1]
+[ext_resource path="res://fnt/asimov_64.tres" type="DynamicFont" id=2]
+[ext_resource path="res://loading.tscn" type="PackedScene" id=3]
+
+[node name="start" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="start_btn" type="Button" parent="."]
+margin_left = 353.124
+margin_top = 459.382
+margin_right = 874.12
+margin_bottom = 636.382
+custom_fonts/font = ExtResource( 2 )
+text = "Start"
+
+[node name="loading" parent="." instance=ExtResource( 3 )]
+visible = false
+

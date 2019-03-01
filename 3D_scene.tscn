@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+size = Vector2( 100, 100 )
+
+[sub_resource type="CubeMesh" id=2]
+
+
+[node name="3D_scene" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.899395, 0.437137, 0, -0.437137, 0.899395, 0, 7, 16.9682 )
+
+[node name="sun" type="DirectionalLight" parent="."]
+transform = Transform( 0.912209, -0.227203, -0.340961, 0, -0.832168, 0.554524, -0.409726, -0.505842, -0.759111, 0, 7, 16.9682 )
+shadow_enabled = true
+
+[node name="pane" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="cube" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
